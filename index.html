@@ -169,34 +169,7 @@
     });
   }
 
-  function checkCollisions() {
-    bullets.forEach((bullet, bulletIndex) => {
-      const b = bullet.getBoundingClientRect();
-
-      enemies.forEach((enemy, enemyIndex) => {
-        const e = enemy.getBoundingClientRect();
-
-        if (
-          b.left < e.right &&
-          b.right > e.left &&
-          b.top < e.bottom &&
-          b.bottom > e.top
-        ) {
-          bullet.remove();
-          enemy.remove();
-
-          bullets.splice(bulletIndex, 1);
-          enemies.splice(enemyIndex, 1);
-
-          score++;
-          scoreText.textContent = "Score: " + score;
-        }
-      });
-    });
-  }
-
-  function endGame() {
-    gameOver = true;
+  function 
     gameOverScreen.style.display = "flex";
   }
 
